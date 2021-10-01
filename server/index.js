@@ -1,10 +1,12 @@
 // import Pusher from "pusher-js";
-import express from "express";
+import express from "express"
 // import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import studentRoutes from "./routes/student.js";
 import calmCheck from './routes/calm.js'
+// const path= require('path');
+import * as path from 'path'
 
 // app config
 const app = express();
@@ -36,6 +38,19 @@ app.use("/student", studentRoutes);
 app.use('/calm', calmCheck)
 
 //liseten
+if(process.env.NODE_ENV ==="production"){
+    app.use(express.static(path.join(_dirname, '/client/bulid')))
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(_dirname, 'client', 'build', 'index.html'))
+    })
+} else{
+    app.get('/', (req, res) => {
+        res.send("Api running")
+    })
+}
+
+
 app.listen(port, () => {
     console.log(`listening on port ${port}`);
     
