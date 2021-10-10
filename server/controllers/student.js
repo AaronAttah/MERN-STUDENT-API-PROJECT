@@ -15,7 +15,7 @@ export const createStudent = async (req, res) => {
     const student = req.body;
     // console.log(student);
     const newStudent = new StudentData(student);
-    res.status(202).send(student);
+//     res.status(202).send(student);
 
     try {
         await newStudent.save();
