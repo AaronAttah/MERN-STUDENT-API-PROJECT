@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+  background-color: rgb(117, 164, 182);
+  background-image: url("images/pexels1.jpg") ;
+  background-repeat: no-repeat;
+  /* height: 100vh; */
+  
+
+
+}
+#root{
+  height: 100vh;
+  background-color: rgb(117, 164, 182);
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+@media (min-width:950px) {
+  #root, .App{
+    background-color: rgb(117, 164, 182);
+    background-image: url("images/pexels1.jpg") ;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+}
+
+
+  
+
+  
+
+
